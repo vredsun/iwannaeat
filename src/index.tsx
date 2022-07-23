@@ -1,16 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './models';
+import { BrowserRouter } from 'react-router-dom';
+import GlobalStyled from './components/styled/GlobalStyled/GlobalStyled';
+import App from './components/App';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter>
+        <GlobalStyled />
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
