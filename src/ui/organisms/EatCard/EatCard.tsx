@@ -3,18 +3,49 @@ import { EatData } from '../../../models/eats/models';
 
 import styled from 'styled-components';
 import Tag from '../../atoms/Tag/Tag';
+import { Link } from 'react-router-dom';
 
-export const EatCardContainer = styled.div`
+export const EatCardContainer = styled(Link)`
   width: 100%;
-  background-color: #e3e3e3;
+  background-color: white;
 `;
 
 export const TagContainer = styled.div`
   display: flex;
+  gap: 8px;
+  padding: 8px 12px;
 `;
+
+export const EatCardTitleContainer = styled.div`
+  display: flex;
+  padding: 8px 12px;
+  gap: 4px;
+  font-size: 22px;
+`
+
+export const EatCardTitle = styled.div`
+  font-weight: 600;
+`
+
+export const EatCardImage = styled.div<{ url: string }>`
+  background-image: ${({ url }) => `url(${url})`};
+  height: 200px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+`
 
 type Props = {
   eat: EatData;
+}
+
+const RatingRecord: Record<number, string> = {
+  1: '1',
+  2: '2',
+  3: '3',
+  4: '4',
+  5: '5',
 }
 
 const EatCard: React.FC<Props> = memo(({ eat }) => {
@@ -29,19 +60,31 @@ const EatCard: React.FC<Props> = memo(({ eat }) => {
     [eat.hashTagsSet],
   );
 
+  const handleClick = () => {
+
+  }
+
   return (
-    <EatCardContainer>
-      <div>
-        <span>{eat.title}</span>
-        <span>{Array.from({ length: eat.rating }).map((d, i) => <span key={i}>⭐</span> )}</span>
-      </div>
+    <EatCardContainer to={`/${eat.id}`}>
+      <EatCardTitleContainer>
+        {/* <span>{RatingRecord[eat.rating]}</span> */}
+        <EatCardTitle>{eat.title}</EatCardTitle>
+      </EatCardTitleContainer>
       <div>
         {
           eat.imgUrl && (
-            <img src={eat.imgUrl}></img>
+            <EatCardImage url={eat.imgUrl} />
           )
         }
       </div>
+      {/* <div>
+        <div>Состав:</div>
+        <ul>
+          <li>Хлеб</li>
+          <li>Колбаса</li>
+          <li>Помидоры</li>
+        </ul>
+      </div> */}
       <TagContainer>{
         hashtagsArray.map(hashtag => (
           <Tag key={hashtag}>{hashtag}</Tag>

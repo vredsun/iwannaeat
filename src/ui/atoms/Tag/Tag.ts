@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 const Tag = styled.div`
-  margin: 0 6px;
   font-size: 12px;
   padding: 4px 8px;
-  border-radius: 10px;
-  border: 1px solid grey;
+  border-radius: 4px;
+  border: 1px solid #171717;
+  color: #171717;
+  font-weight: 500;
 
   &:hover {
-    color: blue;
-    border-color: blue;
+    color: green;
+    border-color: green;
     cursor: pointer;
   }
 `

@@ -8,6 +8,7 @@ import store from './models';
 import { BrowserRouter } from 'react-router-dom';
 import GlobalStyled from './components/styled/GlobalStyled/GlobalStyled';
 import App from './components/App';
+import { ThemeProvider } from 'styled-components';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

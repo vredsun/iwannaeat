@@ -6,6 +6,7 @@ const App: React.FC = () => {
   return (
     <MainTemplate>
       <Routes>
+        <Route path="/:id" element={<EatsListConnected />} />
         <Route path="/" element={<EatsListConnected />} />
       </Routes>
     </MainTemplate>

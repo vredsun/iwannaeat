@@ -1,17 +1,15 @@
 import { PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { EatCardContainer } from '../EatCard/EatCard';
 
 type Props = PropsWithChildren<{
 }>
 
 
 const Container = styled.div`
-  ${EatCardContainer} {
-    margin-top: 10px;
-  }
-
   width: 100%;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const EatsList: React.FC<Props> = ({ children }) => {
