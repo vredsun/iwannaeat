@@ -22,7 +22,7 @@ const generateRandomEat = (): EatData => {
 
   return {
     id: localId,
-    title: `Вкусный бутер`,
+    title: `Вкусный бутерброд`,
     imgUrl: imgUrl,
     rating,
     hashTagsSet: new Set(getRandomHashTags(rating)),
@@ -31,5 +31,5 @@ const generateRandomEat = (): EatData => {
   
 
 export const eatsMockData: Array<EatData> = [
-  ...(Array.from({ length: 2 }).map(() => generateRandomEat()))
+  ...(Array.from({ length: 20 }).map(() => generateRandomEat()))
 ]
