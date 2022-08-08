@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "author": "vredsun",
   "private": true,
+  "homepage": "https://vredsun.github.io/iwannaeat",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.16.4",
@@ -44,6 +45,8 @@
     "workbox-streams": "^6.5.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -71,6 +74,7 @@
     "@types/lodash": "^4.14.182",
     "@types/react-helmet": "^6.1.5",
     "@types/react-loadable": "^5.5.6",
-    "@types/styled-components": "^5.1.25"
+    "@types/styled-components": "^5.1.25",
+    "gh-pages": "^4.0.0"
   }
 }
