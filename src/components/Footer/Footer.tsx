@@ -1,3 +1,5 @@
+import { FaList, FaMagic, FaPlus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
@@ -6,30 +8,28 @@ export const FooterContainer = styled.div`
     background-color: green;
     color: #f5f5f5;
     font-size: 20px;
-    font-weight: 600;
 `;
 
-export const FooterItem = styled.div`
+export const FooterItem = styled(Link)`
     flex: 1 1;
     margin: 0 auto;
     padding: 12px 16px;
-`;
-
-export const FooterItemTitle = styled.div`
-    text-align: center;
+    justify-content: center;
+    display: flex;
+    color: #f5f5f5;
 `;
 
 const Footer: React.FC = () => {
     return (
         <FooterContainer>
-            <FooterItem>
-                <FooterItemTitle>new</FooterItemTitle>
+            <FooterItem to="/new">
+               <FaPlus />
             </FooterItem>
-            <FooterItem>
-                <FooterItemTitle>find</FooterItemTitle>
+            <FooterItem to="/suggest">
+                <FaMagic />
             </FooterItem>
-            <FooterItem>
-                <FooterItemTitle>all</FooterItemTitle>
+            <FooterItem to="/all">
+                <FaList />
             </FooterItem>
         </FooterContainer>
     )
