@@ -1,10 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
+import { createMigrate, persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import { migrations } from './migrations';
 import { rootReducer } from './reducer';
-// import logger from 'redux-logger';
+
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage,
+  whitelist: ['eats'],
+  migrate: createMigrate(migrations, { debug: false }),
+}
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
   middleware: getDefaultMiddleware => {
     if (process.env.NODE_ENV === 'development') {
       // return getDefaultMiddleware().concat(logger);
@@ -13,6 +24,8 @@ const store = configureStore({
     return getDefaultMiddleware();
   },
 });
+export const persistor = persistStore(store)
+
 // @ts-expect-error dev
 window.store = store;
 

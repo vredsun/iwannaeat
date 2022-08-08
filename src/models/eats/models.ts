@@ -1,11 +1,13 @@
-export type EatData = {
+import { NewEatData } from "../add-eat/models";
+
+export type EatData = NewEatData & {
   id: string;
-  title: string;
-  imgUrl: string | null;
-  rating: number;
-  hashTagsSet: Set<string>;
+  // imgUrl: string | null;
+  // rating: number;
+  // hashTagsSet: Set<string>;
 };
 
 export type EatsStateT = {
-  list: Array<EatData>;
+  list: Array<string>;
+  byId: Record<string, EatData>;
 }
