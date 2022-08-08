@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { eatsMockData } from './eats.mock';
 import { EatsStateT } from './models';
 
 const initialState: EatsStateT = {
-  list: eatsMockData, // [],
+  list: [],
 };
 
 const eatsSlice = createSlice({

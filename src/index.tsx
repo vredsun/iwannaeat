@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './models';
 import { BrowserRouter } from 'react-router-dom';
-import GlobalStyled from './components/styled/GlobalStyled/GlobalStyled';
 import App from './components/App';
-import { ThemeProvider } from 'styled-components';
+import GlobalStyled from './components/styled/GlobalStyled/GlobalStyled';
+import './index.css';
+import store from './models';
+import reportWebVitals from './reportWebVitals';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -7,10 +7,15 @@ import EatsList from '../../ui/organisms/EatsList/EatsList';
 const EatsListConnected: React.FC = () => {
   const eatsList = useSelector(selectEatsList);
   const { id } = useParams();
-  console.log({ id })
 
   return (
     <EatsList>
+      {
+        !id && <div>list</div>
+      }
+      {
+        id && <div>{id}</div>
+      }
       {
         eatsList.map(eat => (
           <EatCard key={eat.id} eat={eat} />

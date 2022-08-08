@@ -1,9 +1,9 @@
 import { memo, useMemo } from 'react';
 import { EatData } from '../../../models/eats/models';
 
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Tag from '../../atoms/Tag/Tag';
-import { Link } from 'react-router-dom';
 
 export const EatCardContainer = styled(Link)`
   width: 100%;
@@ -40,13 +40,13 @@ type Props = {
   eat: EatData;
 }
 
-const RatingRecord: Record<number, string> = {
-  1: '1',
-  2: '2',
-  3: '3',
-  4: '4',
-  5: '5',
-}
+// const RatingRecord: Record<number, string> = {
+//   1: '1',
+//   2: '2',
+//   3: '3',
+//   4: '4',
+//   5: '5',
+// }
 
 const EatCard: React.FC<Props> = memo(({ eat }) => {
   const hashtagsArray = useMemo(
@@ -60,9 +60,9 @@ const EatCard: React.FC<Props> = memo(({ eat }) => {
     [eat.hashTagsSet],
   );
 
-  const handleClick = () => {
+  // const handleClick = () => {
 
-  }
+  // }
 
   return (
     <EatCardContainer to={`/${eat.id}`}>

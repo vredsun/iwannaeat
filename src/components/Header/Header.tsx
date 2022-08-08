@@ -6,7 +6,6 @@ const Container = styled.div<{ scrollPercent: number }>`
   justify-content: space-between;
   background-color: green;
   align-items: center;
-  margin-bottom: 12px;
 `;
 
 const Title = styled.div`
@@ -15,11 +14,11 @@ const Title = styled.div`
   font-weight: 600;
 `;
 
-const Search = styled.div`
-  color: #f5f5f5;
-  font-size: 18px;
-  font-weight: 600;
-`;
+// const Search = styled.div`
+//   color: #f5f5f5;
+//   font-size: 18px;
+//   font-weight: 600;
+// `;
 
 type Props = {
   scrollPercent: number;
@@ -29,7 +28,7 @@ const HeaderConnected: React.FC<Props> = ({ scrollPercent }) => {
   return (
     <Container scrollPercent={scrollPercent}>
         <Title>IWannaEat</Title>
-        <Search>Поиск</Search>
+        {/* <Search>Поиск</Search> */}
     </Container>
   )
 }
