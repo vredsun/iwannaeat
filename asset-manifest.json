@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/iwannaeat/static/css/main.e6c13ad2.css",
-    "main.js": "/iwannaeat/static/js/main.9fab30d7.js",
+    "main.js": "/iwannaeat/static/js/main.4d9e7e44.js",
     "static/js/787.3cbd16ae.chunk.js": "/iwannaeat/static/js/787.3cbd16ae.chunk.js",
     "service-worker.js": "/iwannaeat/service-worker.js",
     "index.html": "/iwannaeat/index.html",
     "main.e6c13ad2.css.map": "/iwannaeat/static/css/main.e6c13ad2.css.map",
-    "main.9fab30d7.js.map": "/iwannaeat/static/js/main.9fab30d7.js.map",
+    "main.4d9e7e44.js.map": "/iwannaeat/static/js/main.4d9e7e44.js.map",
     "787.3cbd16ae.chunk.js.map": "/iwannaeat/static/js/787.3cbd16ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.9fab30d7.js"
+    "static/js/main.4d9e7e44.js"
   ]
 }
