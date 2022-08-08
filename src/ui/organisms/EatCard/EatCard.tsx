@@ -53,38 +53,17 @@ const EatCard: React.FC<Props> = memo(({ eat }) => {
     () => {
       const arr: Array<string> = [];
 
-      eat.hashTagsSet.forEach(hashTag => arr.push(hashTag))
-
       return arr
     },
-    [eat.hashTagsSet],
+    [],
   );
 
-  // const handleClick = () => {
-
-  // }
 
   return (
-    <EatCardContainer to={`/${eat.id}`}>
+    <EatCardContainer to={`/all/${eat.id}`}>
       <EatCardTitleContainer>
-        {/* <span>{RatingRecord[eat.rating]}</span> */}
-        <EatCardTitle>{eat.title}</EatCardTitle>
+        <EatCardTitle>{eat.name}</EatCardTitle>
       </EatCardTitleContainer>
-      <div>
-        {
-          eat.imgUrl && (
-            <EatCardImage url={eat.imgUrl} />
-          )
-        }
-      </div>
-      {/* <div>
-        <div>Состав:</div>
-        <ul>
-          <li>Хлеб</li>
-          <li>Колбаса</li>
-          <li>Помидоры</li>
-        </ul>
-      </div> */}
       <TagContainer>{
         hashtagsArray.map(hashtag => (
           <Tag key={hashtag}>{hashtag}</Tag>

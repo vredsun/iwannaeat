@@ -1,24 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { EatsStateT } from './models';
+import { EatData, EatsStateT } from './models';
 
 const initialState: EatsStateT = {
   list: [],
+  byId: {},
 };
 
 const eatsSlice = createSlice({
   name: 'eats',
   initialState,
   reducers: {
-    setLoadingStatus(
+    addEat(
       state,
-      action: PayloadAction<{ vehicleId: string | number; runNumber: number }>,
+      action: PayloadAction<EatData>,
     ) {
-      // const {
-      //   payload: { vehicleId, runNumber },
-      // } = action;
-      // const dataKey = getRoutesByRoadsKey(vehicleId, runNumber);
-
-      // state[dataKey].status = getRequestLoadingStatus();
+      state.list.push(action.payload.id)
+      state.byId[action.payload.id] = action.payload;
     },
   },
   extraReducers: builder => {
